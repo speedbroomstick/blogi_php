@@ -1,0 +1,252 @@
+html { overflow-x:hidden; }
+
+.picture1
+{
+    border-top: 50%;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    background-image: url(fon.jpg);
+    background-size: cover;
+color: #fff;
+background-attachment: fixed;
+background-repeat: repeat-x;
+}
+.video-bg {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.video-bg video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.effects {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+}
+.video-bg__content {
+    z-index: 2;
+    color: #ffffff;
+    font-size: 50px;
+}
+.main {
+    color: darkgrey;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 0 20px;
+    background-color: rgba(60, 60, 60, 0.8);
+    position: absolute;
+    left: 100px;
+    right: 100px;
+    text-align: center;
+}
+.main2 {
+    height: auto;
+    color: darkgrey;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 20px;
+    background-color: rgba(60, 60, 60, 0.8);
+    position: absolute;
+    left: 80px;
+    right: 80px;
+}
+.main3 {
+    height: auto;
+    color: darkgrey;
+    width: 100%;
+
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 20px;
+    position: absolute;
+
+    right: 3px;
+    background-color: rgba(0, 0, 0, 1);
+
+}
+
+
+
+
+
+
+.container {
+    position: relative;
+  }
+  
+  /* Make the image responsive */
+
+  
+  /* Style the button and place it in the middle of the container/image */
+  .container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  a.text:active, /* активная/посещенная ссылка */
+a.text:hover,  /* при наведении */
+a.text {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+  .container .btn:hover {
+  }
+  @media (min-width: 1200px) { 
+    .paragraph{
+    text-align: justify; 
+    font-size: 150%;
+    text-indent: 40px;
+
+    } 
+    .parag{
+      font-size: 120%;
+      } 
+      #par
+      {
+        font-size: 130%;
+      }
+  }
+  @media (min-width: 1500px) { 
+    .paragraph{
+    text-align: justify; 
+    font-size: 170%;
+    text-indent: 40px;
+
+    } 
+    .parag{
+      font-size: 150%;
+      } 
+      #par
+      {
+        font-size: 150%;
+      }
+  }
+  @media (min-width: 1700px) { 
+    .paragraph{
+    text-align: justify; 
+    font-size: 200%;
+    text-indent: 40px;
+
+    } 
+    .parag{
+      font-size: 160%;
+      } 
+      #par
+      {
+        font-size: 170%;
+      }
+  }
+  @media (max-width: 1199px) { 
+    .paragraph{
+    text-align: justify; 
+    font-size: 130%;
+    text-indent: 40px;
+    } 
+    .parag{
+      font-size: 100%;
+      }
+      #par
+      {
+        font-size: 110%;
+      }
+  }
+
+  .icon {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70%;
+    padding: 0.2em;
+    width: 1.5%;
+    height: 4.5%;
+    border-radius: 100%;
+    color: rgb(0, 0, 0);
+    background: hsla(0, 0%, 100%, 0.99)
+  }
+  .icon::before {
+    content: attr(data-char);
+    font-size: 70%;
+  }
+.icon:hover
+{
+  background: rgba(255, 255, 255, 0.52);
+}
+
+
+
+
+  .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+  }
+  
+  .alert.success {background-color: #04AA6D;}
+  .alert.info {background-color: #2196F3;}
+  .alert.warning {background-color: #ff9800;}
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
