@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Новая заметка</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -57,8 +58,8 @@
 session_start();
 if ($_SESSION['rights']=='a')
 {
-echo "hello, ".$_SESSION['login'];
-echo '<p>Добавить новую заметку: </p><form method="post"> <input type="text" name="title" size="20" maxlength="20"/><textarea name="article" cols="55" rows="10"></textarea><input type="hidden" name = "created" value ="<?php echo date("Y-m-d");?>"/><input type="submit" name="submit" value="Отправить" /></form><a href="default.php">Возврат на главную страницу сайта</a>';
+echo '<h1>Hello</h1>',"<h1>",$_SESSION['login'];
+echo '<h3>Добавить новую заметку: </h3><form method="post"> <h5>Заголовок</h5><input type="text" name="title" size="20" maxlength="20"/><h5>Содержание</h5><textarea name="article" cols="30" rows="5"></textarea><br><input class="hollow button secondary" id="pokaz" type="submit" name="submit" value="Отправить" /></form>';
 }
 else
 {
@@ -68,19 +69,22 @@ echo "<br><a href = \"default.php\">На главную</a>";
 
 ?>
 <?php
-//Подключение к серверу
-require_once ("MySiteDB.php");
-//Получение данных из формы
 $title = $_POST['title'];
-$created = $_POST['created'];
+$created = date("Y-m-d");
 $article = $_POST['article'];
-if (($title)&&($created)&&($article))
+if(($title)&&($article))
 {
-//Формирование запроса
-$query = "INSERT INTO notes (id, title, created, article) 
-VALUES (NULL, '$title', '$created', '$article')";
-//Реализация запроса
-$result = mysqli_query ($link, $query);
+$conn = mysqli_connect("localhost", "admin", "admin", "mysitedb");
+if (!$conn) {
+  die("Ошибка: " . mysqli_connect_error());
+}
+$sql = "INSERT INTO notes (id,created,title, article) VALUES (NULL,'$created','$title', '$article')";
+if(mysqli_query($conn, $sql)){
+    echo "Данные успешно добавлены";
+} else{
+    echo "Ошибка: " . mysqli_error($conn);
+}
+mysqli_close($conn);
 }
 ?>
 

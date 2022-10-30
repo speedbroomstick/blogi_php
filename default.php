@@ -62,14 +62,19 @@
 $query = "SELECT * FROM notes ORDER BY id DESC";
 $select_note = mysqli_query($link, $query);
 while ($note = mysqli_fetch_array($select_note)){
+
+
+   echo' <div class="card" style="width: 100%;"><div class="card-body"><h5 class="card-title">';
     echo $note['id'], "<br>";
     ?>
     <a href="comments.php?note=<?php echo $note['id']; ?>">
     <?php echo $note ['title'], "<br>";?></a>
      
     <?php 
-     echo $note ['created'], "<br>";
-    echo $note ['article'], "<br>";
+    echo '</h5>
+    <p class="card-text">',$note ['created'], '<br>', $note ['article'] ,'</p>
+  </div>
+</div>';
     }
     ?>
 
